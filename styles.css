@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #35353c;
+  line-height: 1.6;
+  transition: all 0.2s ease-out;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* About Me Section */
+.about-me {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 30px;
+  background: #f8f8f8;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.about-me img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-me p {
+  font-size: 1.2em;
+  color: #4a4458;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+/* Get in Touch Section */
+.get-in-touch {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 30px;
+  background: #f8f8f8;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.get-in-touch p {
+  font-size: 1.2em;
+  color: #4a4458;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+.get-in-touch a {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 1.1em;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.8em;
+  color: #585889;
+  letter-spacing: -0.5px;
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.project-row:nth-child(even) {
+  grid-template-areas: "description app";
+}
+
+.project-row:nth-child(odd) {
+  grid-template-areas: "app description";
+}
+
+.app-preview {
+  grid-area: app;
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(88, 88, 137, 0.15);
+  height: 120vh;
+  background: white;
+}
+
+.narrow-app-preview {
+  max-width: 600px;
+}
+
+.app-preview iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.project-info {
+  grid-area: description;
+  padding: 40px;
+  background: #dbd5e1;
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.project-info h3 {
+  color: #585889;
+  font-size: 2.2em;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+.project-info p {
+  font-size: 1.15em;
+  color: #4a4458;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.project-info ul {
+  padding-left: 25px;
+  list-style-type: none;
+}
+
+.project-info li {
+  margin-bottom: 0.8em;
+  font-size: 1.05em;
+  position: relative;
+  padding-left: 25px;
+}
+
+.project-info li:before {
+  content: "•";
+  color: #8b7baa;
+  position: absolute;
+  left: 0;
+  font-size: 1.4em;
+  line-height: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .project-row {
+    grid-template-columns: 1fr;
+    grid-template-areas: "description" "app";
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+
+  .project-row:nth-child(even),
+  .project-row:nth-child(odd) {
+    grid-template-areas: "description" "app";
+  }
+
+  .app-preview,
+  .narrow-app-preview {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 15px;
+  }
+
+  .about-me,
+  .get-in-touch {
+    padding: 20px;
+  }
+
+  .about-me img {
+    width: 120px;
+    height: 120px;
+  }
+
+  h1 {
+    font-size: 2.4em;
+  }
+
+  .project-info {
+    padding: 30px;
+  }
+
+  .project-info h3 {
+    font-size: 1.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 10px;
+  }
+
+  .about-me,
+  .get-in-touch {
+    padding: 15px;
+  }
+
+  .about-me img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .about-me p,
+  .get-in-touch p {
+    font-size: 1em;
+  }
+
+  .get-in-touch a {
+    font-size: 0.95em;
+    margin: 5px;
+  }
+
+  h1 {
+    font-size: 2.1em;
+    margin-bottom: 2rem;
+  }
+
+  .app-preview {
+    height: 100vh;
+  }
+
+  .project-info {
+    padding: 25px 20px;
+    margin-top: -15px;
+  }
+
+  .project-info h3 {
+    font-size: 1.7em;
+  }
+
+  .project-info p {
+    font-size: 1em;
+  }
+
+  .project-info li {
+    font-size: 0.95em;
+  }
+}
+
+/* Link Styling */
+a {
+  color: #585889;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: #4b0082;
+  text-decoration: underline;
+}
